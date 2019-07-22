@@ -8,7 +8,6 @@ import { CartContext } from "./contexts/CartContext";
 import Navigation from "./components/Navigation";
 import Products from "./components/Products";
 import ShoppingCart from "./components/ShoppingCart";
-import { createDecipher } from "crypto";
 
 function App() {
   const [products] = useState(data);
