@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import data from "./data";
 import { ProductContext } from "./contexts/ProductContext";
 import { CartContext } from "./contexts/CartContext";
+import { useLocalStorage } from "./utility/useLocalStorage";
 
 // Components
 import Navigation from "./components/Navigation";
@@ -17,13 +18,13 @@ function App() {
     setCart([...cart, item]);
   };
   const removeItem = cartItem => {
-	  setCart([...cart.filter(item => item.id !== cartItem)])
-  }
+    setCart([...cart.filter(item => item.id !== cartItem)]);
+  };
 
   return (
     <div className="App">
       <ProductContext.Provider value={{ products, addItem }}>
-        <CartContext.Provider value={{cart, removeItem}}>
+        <CartContext.Provider value={{ cart, removeItem }}>
           <Navigation />
           {/* Routes */}
           <Route exact path="/" component={Products} />
